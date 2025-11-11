@@ -1,4 +1,4 @@
-# Multi-stage build for Vite + React app
+# Multi-stage build for Vite + React app - Coolify optimized
 # Stage 1: Build the application
 FROM node:20-alpine AS builder
 
