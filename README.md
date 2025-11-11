@@ -54,6 +54,7 @@ pnpm i
 
 ```shell
 pnpm add some_new_dependency
+```
 
 **Start Preview**
 
@@ -66,3 +67,18 @@ pnpm run dev
 ```shell
 pnpm run build
 ```
+
+## Deployment
+
+This project is optimized for **Coolify** deployment with Docker.
+
+**Quick Deploy with Coolify:**
+1. Create new Application in Coolify
+2. Connect Git repository
+3. Build Pack: **Docker**
+4. Health Check: `/health`
+5. Deploy
+
+See [COOLIFY.md](./COOLIFY.md) for complete Coolify deployment guide.
+
+For manual Docker deployment, see [DEPLOYMENT.md](./DEPLOYMENT.md).

@@ -1,0 +1,16 @@
+# Coolify Configuration
+# This file helps Coolify understand how to deploy this application
+
+# Port Configuration
+PORT=80
+
+# Health Check Endpoint
+HEALTHCHECK_PATH=/health
+
+# Build Configuration
+BUILD_COMMAND=pnpm run build
+DOCKERFILE_PATH=./Dockerfile
+
+# Environment (optional - uncomment if needed)
+# VITE_APP_TITLE=Bennie Williams AI Consulting
+# NODE_ENV=production
