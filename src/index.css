@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 100% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 100% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 100% 12%;
+    --primary: 210 100% 12%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 10% 95%;
+    --secondary-foreground: 210 100% 12%;
+    --muted: 210 10% 95%;
+    --muted-foreground: 210 10% 40%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 210 100% 12%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 10% 90%;
+    --input: 210 10% 90%;
+    --ring: 210 100% 12%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 210 100% 12%;
+    --foreground: 0 0% 100%;
+    --card: 210 100% 12%;
+    --card-foreground: 0 0% 100%;
+    --popover: 210 100% 12%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 210 100% 12%;
+    --secondary: 210 50% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 50% 20%;
+    --muted-foreground: 210 10% 70%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 210 100% 12%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 50% 20%;
+    --input: 210 50% 20%;
+    --ring: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #001f3f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD700;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6c200;
+}
+
+/* Animation delays */
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-1000 {
+  animation-delay: 1000ms;
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
