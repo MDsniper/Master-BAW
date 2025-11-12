@@ -11,14 +11,14 @@ export interface BlogPost {
 }
 
 // Import all blog post markdown files
-const blogPosts: Record<string, string> = import.meta.glob(
-  '../../content/blog/*.md',
-  { as: 'raw', eager: true }
+const blogPostModules = import.meta.glob(
+  '../content/blog/*.md',
+  { query: '?raw', import: 'default', eager: true }
 );
 
 export function getAllBlogPosts(): BlogPost[] {
-  const posts = Object.entries(blogPosts).map(([filepath, content]) => {
-    const { data } = matter(content);
+  const posts = Object.entries(blogPostModules).map(([filepath, content]) => {
+    const { data } = matter(content as string);
     return {
       title: data.title,
       date: data.date,
@@ -34,13 +34,13 @@ export function getAllBlogPosts(): BlogPost[] {
 }
 
 export function getBlogPostBySlug(slug: string): BlogPost | null {
-  const post = Object.entries(blogPosts).find(([filepath]) => {
+  const post = Object.entries(blogPostModules).find(([filepath]) => {
     return filepath.includes(`${slug}.md`);
   });
 
   if (!post) return null;
 
-  const { data, content } = matter(post[1]);
+  const { data, content } = matter(post[1] as string);
 
   return {
     title: data.title,
