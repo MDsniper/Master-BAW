@@ -14,7 +14,13 @@ export default function BlogPost() {
     return <Navigate to="/" replace />;
   }
 
-  const post = getBlogPostBySlug(slug);
+  let post;
+  try {
+    post = getBlogPostBySlug(slug);
+  } catch (error) {
+    console.error('Error loading blog post:', error);
+    return <Navigate to="/" replace />;
+  }
 
   if (!post) {
     return <Navigate to="/" replace />;
