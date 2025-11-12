@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Calendar, ArrowRight, Tag } from 'lucide-react';
@@ -95,13 +96,15 @@ export default function Blog() {
                       </span>
                     ))}
                   </div>
-                  <Button
-                    variant="ghost"
-                    className="text-gold-600 hover:text-gold-700 p-0 h-auto font-semibold group/btn"
-                  >
-                    Read More
-                    <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
-                  </Button>
+                  <Link to={`/blog/${post.slug}`}>
+                    <Button
+                      variant="ghost"
+                      className="text-gold-600 hover:text-gold-700 p-0 h-auto font-semibold group/btn"
+                    >
+                      Read More
+                      <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </motion.div>
@@ -141,13 +144,15 @@ export default function Blog() {
                     </span>
                   ))}
                 </div>
-                <Button
-                  variant="ghost"
-                  className="text-gold-600 hover:text-gold-700 p-0 h-auto font-semibold group/btn"
-                >
-                  Read More
-                  <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                <Link to={`/blog/${post.slug}`}>
+                  <Button
+                    variant="ghost"
+                    className="text-gold-600 hover:text-gold-700 p-0 h-auto font-semibold group/btn"
+                  >
+                    Read More
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           ))}
